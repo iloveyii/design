@@ -3,25 +3,21 @@
 -----------------------------------------*/
 .focus-box .service-icon .pixeden {
   border-radius: 50%;
-  text-align: center;
-}
+  text-align: center; }
 
 .focus {
   overflow: hidden;
-  background: #FFFFFF;
-}
+  background: #FFFFFF; }
 
 .focus .row {
-  text-align: center;
-}
+  text-align: center; }
 
 .focus .row .focus-box, .our-team .row .team-box {
   display: inline-block;
   float: none !important;
   margin-right: -4px;
   vertical-align: top;
-  margin-bottom: 25px;
-}
+  margin-bottom: 25px; }
 
 /* FOCUS BOX */
 .focus-box .service-icon {
@@ -35,48 +31,38 @@
   position: relative;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
+  transition: all 0.2s ease-in-out; }
 
 /* ON HOVER COLORED ROUNDED CIRCLE AROUND ICONS */
 /* ON HOVER COLORED ROUNDED CIRCLE AROUND ICONS */
 .red, .green, .blue, .yellow {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
+  transition: all 0.2s ease-in-out; }
 
 .focus-box:nth-child(4n+1) .service-icon:hover {
-  border: 10px solid #e96656;
-}
+  border: 10px solid #e96656; }
 
 .focus-box:nth-child(4n+2) .service-icon:hover {
-  border: 10px solid #34d293;
-}
+  border: 10px solid #34d293; }
 
 .focus-box:nth-child(4n+3) .service-icon:hover {
-  border: 10px solid #3ab0e2;
-}
+  border: 10px solid #3ab0e2; }
 
 .focus-box:nth-child(4n+4) .service-icon:hover {
-  border: 10px solid #f7d861;
-}
+  border: 10px solid #f7d861; }
 
 .focus-box:nth-child(4n+1) .red-border-bottom:before {
-  background: #e96656;
-}
+  background: #e96656; }
 
 .focus-box:nth-child(4n+2) .red-border-bottom:before {
-  background: #34d293;
-}
+  background: #34d293; }
 
 .focus-box:nth-child(4n+3) .red-border-bottom:before {
-  background: #3ab0e2;
-}
+  background: #3ab0e2; }
 
 .focus-box:nth-child(4n+4) .red-border-bottom:before {
-  background: #f7d861;
-}
+  background: #f7d861; }
 
 .focus-box h5 {
   margin-bottom: 15px;
@@ -89,72 +75,34 @@
   font-size: 17px;
   float: none;
   width: auto;
-  background: none;
-}
+  background: none; }
 
 .focus-box p {
   font-size: 14px;
-  color: #808080;
-}
+  color: #808080; }
 
 /*----OTHER FOCUSES ----*/
 .other-focuses {
-  margin-bottom: 25px;
-}
+  background: url(images/lines.png) repeat-x center;
+  margin-bottom: 25px; }
 
 .other-focuses .section-footer-title {
   padding: 0 15px;
   color: #404040;
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 .other-focus-list {
   padding-top: 5px;
-  margin-bottom: -17px;
-}
+  margin-bottom: -17px; }
 
 .other-focus-list ul li {
   display: inline-block;
   margin-right: 50px;
   padding-bottom: 15px;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 
 .other-focus-list ul li:last-child {
-  margin-right: 0;
-}
+  margin-right: 0; }
 
 .other-focus-list ul li i {
-  margin-right: 8px;
-}
-
-body {
-  font-family: arial;
-  background: #f8f9fb;
-}
-
-html, body, ul, ol, li, form, fieldset, legend {
-  margin: 0;
-  padding: 0;
-}
-
-h1, h2, h3, h4, p {
-  margin-top: 0;
-}
-
-fieldset img {
-  border: 0;
-}
-
-li {
-  line-style: none;
-}
-
-.wrapper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+  margin-right: 8px; }
