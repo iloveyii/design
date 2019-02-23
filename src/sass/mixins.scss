@@ -25,3 +25,13 @@
     color: pink;
   }
 }
+
+// Clear fix
+
+@mixin clearFix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}

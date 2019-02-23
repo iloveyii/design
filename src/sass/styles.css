@@ -1,3 +1,36 @@
+body {
+  font-family: 'Roboto',arial,sans-serif;
+  background: #f8f9fb;
+}
+
+html, body, ul, ol, li, form, fieldset, legend {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, p {
+  margin-top: 0;
+}
+
+fieldset img {
+  border: 0;
+}
+
+ul {
+  width: 100%;
+  list-style-type: none;
+}
+
+ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+li {
+  line-style: none;
+}
+
 /*---------------------------------------
  **   Section: Our focus             -----
 -----------------------------------------*/
@@ -36,6 +69,9 @@
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  float: left;
+  margin-left: 20px;
+  cursor: pointer;
 }
 
 /* ON HOVER COLORED ROUNDED CIRCLE AROUND ICONS */
@@ -128,36 +164,8 @@
   margin-right: 8px;
 }
 
-body {
-  font-family: arial;
-  background: #f8f9fb;
-}
-
-html, body, ul, ol, li, form, fieldset, legend {
-  margin: 0;
-  padding: 0;
-}
-
-h1, h2, h3, h4, p {
-  margin-top: 0;
-}
-
-fieldset img {
-  border: 0;
-}
-
-ul {
-  width: 100%;
-  list-style-type: none;
-}
-
-li {
-  line-style: none;
-}
-
 .wrapper {
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   -webkit-box-sizing: border-box;
@@ -181,7 +189,7 @@ li {
 
 #main-nav li {
   float: left;
-  width: 14%;
+  width: 25%;
 }
 
 #main-nav a {
@@ -190,6 +198,15 @@ li {
   padding: 16px;
   display: block;
   text-align: center;
+  font-family: 'Roboto', arial, sans-serif;
+}
+
+#main-nav a:hover {
+  background: #333;
+}
+
+#services li {
+  background: #FFF;
 }
 
 section h1 {

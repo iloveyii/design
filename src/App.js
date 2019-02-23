@@ -12,7 +12,7 @@ class App extends Component {
                         <div className="wrapper">
                             <ul>
                                 <li><a href="#">Home</a></li>
-                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">About</a></li>
                                 <li><a href="#">Login</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
@@ -36,8 +36,14 @@ class App extends Component {
                         <p></p>
 
                         <ul className="focus-box">
-                            <li className="service-icon"></li>
-                            <li className="service-icon"></li>
+                            <li className="service-icon">
+                                <i style={Styles.parraImg}
+                                   className="pixeden glyphicon"></i>
+                            </li>
+                            <li className="service-icon">
+                                <i style={Styles.roundImg}
+                                   className="pixeden glyphicon"></i>
+                            </li>
                             <li className="service-icon"></li>
                             <li className="service-icon"></li>
                             <li className="service-icon"></li>
@@ -63,5 +69,19 @@ class App extends Component {
         );
     }
 }
+
+const Styles = {
+    roundImg: {
+        background: "url(images/ti-logo.png) no-repeat center",
+        width: "100%",
+        height: "100%"
+    },
+
+    parraImg: {
+        background: "url(images/parallax.png) no-repeat center",
+        width: "100%",
+        height: "100%"
+    }
+};
 
 export default App;
