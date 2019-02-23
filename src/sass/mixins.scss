@@ -1,0 +1,27 @@
+@import "variables.scss";
+// Mixins
+@mixin banner {
+  width: 100%;
+  position: relative;
+  color: red;
+  .banner-content {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+  }
+  img {
+    width: 100%;
+  }
+  span {
+    width: 100%;
+    font-size: $bannerHeading;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  span.title {
+    font-weight: normal;
+    margin-bottom: 30px;
+    color: pink;
+  }
+}

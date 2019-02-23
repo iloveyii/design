@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
+import banner from './banner.png';
 import './sass/styles.css';
 
 class App extends Component {
@@ -22,7 +23,7 @@ class App extends Component {
                         <img src={logo} className="App-logo" alt="logo"/>
                         <div className="banner-content">
                             <div className="wrapper">
-                                <div className="title">Check our products</div>
+                                <span className="title">Check our products</span>
                                 <span className="sub-title">All about portfolio</span>
                             </div>
                         </div>
@@ -42,6 +43,18 @@ class App extends Component {
                             <li className="service-icon"></li>
 
                         </ul>
+
+                        <div className="middle-banner">
+                            <img src={banner} className="App-logo" alt="logo"/>
+                            <div className="banner-content">
+                                <div className="wrapper">
+                                    <ul>
+                                        <li>This is first line on our banner</li>
+                                        <li>This is second line on our banner</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
