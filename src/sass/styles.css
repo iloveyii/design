@@ -27,10 +27,6 @@ ul:after {
   clear: both;
 }
 
-li {
-  line-style: none;
-}
-
 /*---------------------------------------
  **   Section: Our focus             -----
 -----------------------------------------*/
@@ -69,8 +65,6 @@ li {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  float: left;
-  margin-left: 20px;
   cursor: pointer;
 }
 
@@ -206,6 +200,18 @@ li {
 }
 
 #services li {
+  float: left;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  width: 32%;
+  border: 0px solid rebeccapurple;
+}
+
+#services li:nth-child(3n) {
+  margin-right: 0;
+}
+
+#services li div {
   background: #FFF;
 }
 

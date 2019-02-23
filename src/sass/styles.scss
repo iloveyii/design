@@ -40,6 +40,10 @@
 
 #services {
   li {
+    @include grid(3, 2%);
+    border: 0px solid rebeccapurple;
+  }
+  li div {
     background: #FFF;
   }
 

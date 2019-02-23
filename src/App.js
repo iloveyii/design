@@ -36,17 +36,24 @@ class App extends Component {
                         <p></p>
 
                         <ul className="focus-box">
-                            <li className="service-icon">
-                                <i style={Styles.parraImg}
-                                   className="pixeden glyphicon"></i>
+                            <li>
+                                <div className="service-icon">
+                                    <i style={Styles.parraImg}
+                                       className="pixeden glyphicon"></i>
+                                </div>
                             </li>
-                            <li className="service-icon">
-                                <i style={Styles.roundImg}
-                                   className="pixeden glyphicon"></i>
+                            <li>
+                                <div className="service-icon">
+                                    <i style={Styles.roundImg}
+                                       className="pixeden glyphicon"></i>
+                                </div>
                             </li>
-                            <li className="service-icon"></li>
-                            <li className="service-icon"></li>
-                            <li className="service-icon"></li>
+                            <li>
+                                <div className="service-icon">
+                                    <i style={Styles.parraImg}
+                                       className="pixeden glyphicon"></i>
+                                </div>
+                            </li>
 
                         </ul>
 
