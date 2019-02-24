@@ -13,6 +13,7 @@
 
 #main-nav {
   background: $deepBlue;
+  border-left: 3px solid #120ef9;
 
   ul {
     width: 100%;
@@ -46,6 +47,7 @@
   li div {
     background: #FFF;
   }
+  margin: 30px 0;
 
 }
 
