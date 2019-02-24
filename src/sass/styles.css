@@ -27,6 +27,10 @@ ul:after {
   clear: both;
 }
 
+header {
+  margin-bottom: 40px;
+}
+
 /*---------------------------------------
  **   Section: Our focus             -----
 -----------------------------------------*/
@@ -218,6 +222,7 @@ ul:after {
 section h1 {
   font-size: 24px;
   color: #032f3e;
+  text-align: center;
 }
 
 .lead-banner {

@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import banner from './banner.png';
 import './sass/styles.css';
 
 class App extends Component {
     render() {
         return (
-            <div className="wrapper">
+            <div>
                 <header>
                     <nav id="main-nav">
                         <div className="wrapper">
@@ -20,7 +19,7 @@ class App extends Component {
                     </nav>
 
                     <div className="lead-banner">
-                        <img src={logo} className="App-logo" alt="logo"/>
+                        <img src="http://placehold.it/1200x400" className="App-logo" alt="logo"/>
                         <div className="banner-content">
                             <div className="wrapper">
                                 <span className="title">Check our products</span>
@@ -57,19 +56,20 @@ class App extends Component {
 
                         </ul>
 
-                        <div className="middle-banner">
-                            <img src={banner} className="App-logo" alt="logo"/>
-                            <div className="banner-content">
-                                <div className="wrapper">
-                                    <ul>
-                                        <li>This is first line on our banner</li>
-                                        <li>This is second line on our banner</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </section>
+
+                <div className="middle-banner">
+                    <img src={banner} className="App-logo" alt="logo"/>
+                    <div className="banner-content">
+                        <div className="wrapper">
+                            <ul>
+                                <li>This is first line on our banner</li>
+                                <li>This is second line on our banner</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
 
             </div>
