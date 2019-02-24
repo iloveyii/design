@@ -1,57 +1,23 @@
 import React, {Component} from 'react';
 import Header from './components/Header';
+import Services from './components/Services';
+import Banner from './components/Banner';
+import Cards from './components/Cards';
 
-
-import banner from './banner.png';
 import './sass/styles.css';
 
 class App extends Component {
     render() {
         return (
             <div>
-                <Header />
+                <Header/>
 
-                <section id="services">
-                    <div className="wrapper">
-                        <h1>Services</h1>
-                        <p></p>
+                <Services/>
 
-                        <ul className="focus-box">
-                            <li>
-                                <div className="service-icon">
-                                    <i style={Styles.parraImg}
-                                       className="pixeden glyphicon"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="service-icon">
-                                    <i style={Styles.roundImg}
-                                       className="pixeden glyphicon"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="service-icon">
-                                    <i style={Styles.parraImg}
-                                       className="pixeden glyphicon"></i>
-                                </div>
-                            </li>
+                <Cards />
 
-                        </ul>
 
-                    </div>
-                </section>
-
-                <div className="middle-banner">
-                    <img src={banner} className="App-logo" alt="logo"/>
-                    <div className="banner-content">
-                        <div className="wrapper">
-                            <ul>
-                                <li>This is first line on our banner</li>
-                                <li>This is second line on our banner</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <Banner/>
 
 
             </div>

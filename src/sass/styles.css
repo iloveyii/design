@@ -209,7 +209,7 @@ ul:after {
   margin-right: 2%;
   margin-bottom: 2%;
   width: 32%;
-  border: 0px solid rebeccapurple;
+  border: 1px solid rebeccapurple;
 }
 
 #services li:nth-child(3n) {
@@ -292,4 +292,29 @@ section h1 {
   font-size: 20px;
   width: 100%;
   margin: 20px 0;
+}
+
+#cards {
+  margin: 30px 0;
+}
+
+#cards .card {
+  border: 1px solid rebeccapurple;
+}
+
+#cards .card:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#cards img {
+  display: block;
+  float: left;
+}
+
+#cards .content {
+  padding: 0 30px;
+  display: block;
+  float: left;
 }
