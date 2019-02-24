@@ -5,7 +5,7 @@ class Banner extends React.Component {
     render() {
         return (
             <div className="middle-banner">
-                <img src={banner} className="App-logo" alt="logo"/>
+                <img src={banner} className="App-logo" alt="logo" />
                 <div className="banner-content">
                     <div className="wrapper">
                         <ul>

@@ -309,12 +309,17 @@ section h1 {
 }
 
 #cards img {
+  width: 40%;
   display: block;
   float: left;
 }
 
 #cards .content {
+  width: 60%;
   padding: 0 30px;
   display: block;
   float: left;
 }
+#cards p {
+  text-align: justify;
+} 
