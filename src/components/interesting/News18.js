@@ -1,6 +1,5 @@
-let Parser = require("rss-parser");
-let fetch = require('node-fetch');
-const parseString = require('xml2js').parseString;
+import Parser from "rss-parser";
+import axios from 'axios';
 
 class News18 {
     constructor(url) {
@@ -10,19 +9,49 @@ class News18 {
     }
 
     fetchUrl() {
+        let  data = [];
+        axios.get(this.url, {
+            method: "GET", // *GET, POST, PUT, DELETE, etc.
+            mode: "no-cors", // no-cors, cors, *same-origin
+            cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: "*", // include, *same-origin, omit
+            headers: {
+                "Content-Type": "application/json",
+                // "Content-Type": "application/x-www-form-urlencoded",
+            },
+            redirect: "follow", // manual, *follow, error
+            referrer: "no-referrer", // no-referrer, *client
+            }
+
+        ).then(res => {
+            console.log(res.data);
+            data = res.data;
+            return res.data
+        }).catch(error => {
+            throw new Error(error);
+            console.dir(error)
+        });
+
+        console.log('outside axios')
+        return [];
+    }
+
+    fetchUrl2() {
         let items = [];
         const parser = new Parser({
             customFields: {
                 item: [
-                    ['g:image_link' , 'image'],
-                ]
+                    ['g:image_link', 'image'],
+                ],
+                headers: {mode: 'no-cors'}
             }
         });
-
-        const feed = parser.parseURL(this.url).then(contents => {
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const feed = parser.parseURL(proxyurl + this.url).then(contents => {
+            console.log('contents', contents);
             let items = contents.items;
             items = items.slice(0, 5);
-            items = items.map( item => {
+            items = items.map(item => {
                 const image = item.image.match(/http:\/\/.*\.(jpg|png)/i);
                 let newItem = {
                     title: item.title,
@@ -36,8 +65,9 @@ class News18 {
 
             console.log(items);
         });
+
+        return items;
     }
 }
 
-const m = new News18('http://urdu.news18.com/rss/eye-catcher.xml');
-m.fetchUrl();
+export default News18;

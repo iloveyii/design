@@ -1,7 +1,8 @@
 import React from 'react';
 import Card from './Card';
+import News18 from './interesting/News18';
+import api from './../api/interesting';
 
-import banner from "../banner.png";
 import Parser from 'rss-parser';
 
 
@@ -21,30 +22,13 @@ class Cards extends React.Component {
     }
 
     componentDidMount() {
-        let url = 'http://localhost:3000/feed.xml';
-        // url = 'https://www.thenews.com.pk/rss/1/1';
-        url = 'https://www.urdupoint.com/rss/urdupoint.rss';
-        let urlIteresting = 'http://urdu.news18.com/rss/eye-catcher.xml';
-        this.fetchUrl(url);
-        let feed = null;
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        console.log(proxyurl + url);
-        const parser = new Parser({
-            customFields: {
-                item: ['image'],
-            }
-        });
         (async () => {
-            feed = await parser.parseURL(proxyurl + url);
-            if (feed.items.length > 0) {
-                this.setState({ items: feed.items});
+            let items = await api.news18.interesting();
+            if (items.length > 0) {
+                this.setState({ items: items});
             }
-            console.log(feed.items);
+            console.log(items);
         })();
-
-
-
-
     }
 
     render() {

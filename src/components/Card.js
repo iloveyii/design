@@ -1,5 +1,4 @@
 import React from 'react';
-import banner from "../banner.png";
 
 class Card extends React.Component {
     constructor(props) {
