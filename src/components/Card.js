@@ -27,7 +27,7 @@ class Card extends React.Component {
                             <button onClick={this.expand}>Show more</button>
                             {
                                 this.state.expanded
-                                    ? <div className="description"><p className="urdu">{item.content.trim()}</p></div>
+                                    ? <div className="description"><p className="urdu">{item.title.trim()}</p></div>
                                     : null
                             }
 
