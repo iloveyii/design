@@ -10,44 +10,34 @@ class News18 {
     }
 
     fetchUrl() {
+        let items = [];
         const parser = new Parser({
             customFields: {
-                item: ['image'],
+                item: [
+                    ['g:image_link' , 'image'],
+                ]
             }
         });
 
         const feed = parser.parseURL(this.url).then(contents => {
-            const items = contents.items;
-            items.map( item => {
-                console.log(item.title);
-                console.log(item.image);
-            })
+            let items = contents.items;
+            items = items.slice(0, 5);
+            items = items.map( item => {
+                const image = item.image.match(/http:\/\/.*\.(jpg|png)/i);
+                let newItem = {
+                    title: item.title,
+                    link: item.link,
+                    image: image[0],
+                    content: item.content,
+                    contentSnippet: item.contentSnippet
+                };
+                return newItem;
+            });
+
+            console.log(items);
         });
-    }
-
-    fetchUrl2() {
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        console.log('Fetching url : ' + proxyurl + this.url);
-        fetch(this.url) // https://cors-anywhere.herokuapp.com/https://example.com
-            .then(response => response.text())
-            .then(contents => {
-                const parser = new Parser({
-                    customFields: {
-                        item: ['image'],
-                    }
-                });
-
-                const feed = parser.parseString(contents).then(contents => {
-                    const items = contents.items;
-                    items.map( item => {
-                        console.log(item.title);
-                        console.log(item.image);
-                    })
-                });
-            })
-            .catch((err) => console.log("Can’t access " + this.url + " response. Blocked by browser?" + err.toString()))
     }
 }
 
-const m = new Model('http://urdu.news18.com/rss/eye-catcher.xml');
+const m = new News18('http://urdu.news18.com/rss/eye-catcher.xml');
 m.fetchUrl();
