@@ -27,7 +27,7 @@ class Card extends React.Component {
                             <button onClick={this.expand}>Show more</button>
                             {
                                 this.state.expanded
-                                    ? <div className="description"><p>{item.content.trim()}</p></div>
+                                    ? <div className="description"><p className="urdu">{item.content.trim()}</p></div>
                                     : null
                             }
 
@@ -39,4 +39,4 @@ class Card extends React.Component {
     }
 }
 
-export default Card;  
+export default Card;

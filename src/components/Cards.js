@@ -12,8 +12,11 @@ class Cards extends React.Component {
     }
 
     componentDidMount() {
-        const url = 'https://www.thenews.com.pk/rss/1/1';
+        let url = 'http://localhost:3000/feed.xml';
+        // url = 'https://www.thenews.com.pk/rss/1/1';
+        url = 'https://www.urdupoint.com/rss/urdupoint.rss';
         let feed = null;
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
         const parser = new Parser({
             customFields: {
@@ -21,7 +24,7 @@ class Cards extends React.Component {
             }
         });
         (async () => {
-            feed = await parser.parseURL(url);
+            feed = await parser.parseURL(proxyurl + url);
             if (feed.items.length > 0) {
                 this.setState({ items: feed.items });
             }
@@ -38,8 +41,7 @@ class Cards extends React.Component {
         return (
             this.state.items && this.state.items.length > 0
                 ?
-                this.state.items.map(item => <Card item={item} />)
-
+                this.state.items.map((item, i) => <Card key={i} item={item} />)
                 :
                 <div>Loading ...</div>
         )
