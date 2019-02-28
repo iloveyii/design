@@ -16,6 +16,7 @@
   "author": "Hazrat Ali",
   "license": "ISC",
   "dependencies": {
-    "hapi": "^18.1.0"
+    "hapi": "^18.1.0",
+    "sleep": "^6.0.0"
   }
 }

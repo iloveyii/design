@@ -4,30 +4,23 @@ import News18 from './interesting/News18';
 import api from './../api/interesting';
 
 import Parser from 'rss-parser';
-
+import axios from 'axios';
 
 class Cards extends React.Component {
     constructor(props) {
         super(props);
         this.state = { items: [] };
-        this.fetchUrl = this.fetchUrl.bind(this);
-    }
-
-    fetchUrl(url) {
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
-            .then(response => response.text())
-            .then(contents => console.log(contents))
-            .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+        this.url = 'http://localhost:9090/index.php';
     }
 
     componentDidMount() {
         (async () => {
-            let items = await api.news18.interesting();
-            if (items.length > 0) {
-                this.setState({ items: items});
-            }
-            console.log(items);
+            await fetch(this.url)
+                .then(response => response.text())
+                .then(contents => {
+                    this.setState({ items: (JSON.parse(contents.replace(/&quot;/g,'\\"'))).slice(0, 20) });
+                })
+                .catch(() => console.log("Can’t access " + this.url + " response. Blocked by browser?"));
         })();
     }
 

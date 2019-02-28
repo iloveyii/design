@@ -19,7 +19,7 @@ class Card extends React.Component {
                 <div className="wrapper">
                     <div className="card">
                         <div>
-                            <img src={item.image} alt="" />
+                            <img src={item.image} alt="Image" />
                         </div>
                         <div className="content">
                             <div className="title"><h2> {item.title} </h2></div>
