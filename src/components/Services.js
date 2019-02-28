@@ -13,18 +13,21 @@ class Services extends React.Component {
                             <div className="service-icon">
                                 <i style={Styles.parraImg}
                                    className="pixeden glyphicon"></i>
+                                <p id="cat">مارشل</p>
                             </div>
                         </li>
                         <li>
                             <div className="service-icon">
                                 <i style={Styles.roundImg}
                                    className="pixeden glyphicon"></i>
+                                <p id="cat"> پیپلز </p>
                             </div>
                         </li>
                         <li>
                             <div className="service-icon">
                                 <i style={Styles.parraImg}
                                    className="pixeden glyphicon"></i>
+                                <p id="cat"> ملک</p>
                             </div>
                         </li>
 

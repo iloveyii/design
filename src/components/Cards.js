@@ -10,7 +10,7 @@ class Cards extends React.Component {
     constructor(props) {
         super(props);
         this.state = { items: [] };
-        this.url = 'http://localhost:8080/news18/interesting';
+        this.url = 'http://localhost:8080/urdup/interesting';
     }
 
 
