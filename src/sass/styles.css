@@ -333,7 +333,8 @@ section h1 {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.40455
+  line-height: 1.40455;
+  direction: rtl;
 }
 #cards h2 {
   text-align: justify;
@@ -345,6 +346,7 @@ section h1 {
   font-weight: 400;
   line-height: 1.80455;
   color: blue;
+  direction: rtl;
 }
 
 

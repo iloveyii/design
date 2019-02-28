@@ -10,8 +10,10 @@ class Cards extends React.Component {
     constructor(props) {
         super(props);
         this.state = { items: [] };
-        this.url = 'http://localhost:9090/index.php';
+        this.url = 'http://localhost:8080/news18/interesting';
     }
+
+
 
     componentDidMount() {
         (async () => {
