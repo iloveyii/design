@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from "react-redux";
+import {withRouter} from "react-router-dom";
 
 import Card from './Card';
 import { newsReadAction } from '../actions/NewsAction';
 import { interestingReadAction } from '../actions/InterestingAction';
 import { internationalReadAction } from '../actions/InternationalAction';
-import {withRouter} from "react-router-dom";
+import Banner from './Banner';
+
 
 class Cards extends React.Component {
     constructor(props) {
@@ -57,11 +59,17 @@ class Cards extends React.Component {
 
     render() {
         return (
-            this.state.items && this.state.items.length > 0
-                ?
-                this.state.items.map((item, i) => <Card key={i} item={item} />)
-                :
-                <div>Loading ...</div>
+            <div>
+
+                {
+                    this.state.items && this.state.items.length > 0
+                        ?
+                        this.state.items.map((item, i) => <Card key={i} item={item}/>)
+                        :
+                        <div>Loading ...</div>
+                }
+                <Banner/>
+            </div>
         )
     }
 }

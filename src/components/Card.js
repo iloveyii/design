@@ -23,14 +23,15 @@ class Card extends React.Component {
                         </div>
                         <div className="content">
                             <div className="title"><h2> {item.title} </h2></div>
-                            <button onClick={this.expand}>Show more</button>
-                            {
-                                this.state.expanded
-                                    ? <div className="description"><p className="urdu">{item.contentSnippet.trim()}</p></div>
-                                    : null
-                            }
-
                         </div>
+                    </div>
+                    <div className="card">
+                        <button onClick={this.expand}>Show more</button>
+                        {
+                            this.state.expanded
+                                ? <div className="description"><p className="urdu">{item.contentSnippet.trim()}</p></div>
+                                : null
+                        }
                     </div>
                 </div>
             </section>
