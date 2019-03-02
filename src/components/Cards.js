@@ -8,29 +8,19 @@ class Cards extends React.Component {
     constructor(props) {
         super(props);
         this.state = { items: [] };
-        this.url = 'http://localhost:8080/urdup/interesting';
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log('Inside componentWillReceiveProps');
-        this.setState({ items: nextProps.news.slice(0, 15) });
+        if(nextProps.news && Array.isArray(nextProps.news)) {
+            this.setState({items: nextProps.news.slice(0, 15)});
+        }
     }
+
     componentDidMount() {
-        console.log('Inside componentDidMount');
         this.props.newsReadAction(11);
-            /*
-            (async () => {
-                await fetch(this.url)
-                    .then(response => response.text())
-                    .then(contents => {
-                        this.setState({ items: (JSON.parse(contents.replace(/&quot;/g,'\\"'))).slice(0, 20) });
-                    })
-                    .catch(() => console.log("Can’t access " + this.url + " response. Blocked by browser?"));
-            })();*/
     }
 
     render() {
-        console.log('length' + this.state.items.length);
         return (
             this.state.items && this.state.items.length > 0
                 ?

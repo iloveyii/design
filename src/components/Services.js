@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Services extends React.Component {
     render() {
@@ -60,25 +61,31 @@ class Services extends React.Component {
 
                     <ul className="focus-box">
                         <li>
-                            <div className="service-icon">
-                                <i style={Styles.parraImg}
-                                   className="pixeden glyphicon"></i>
-                                <p id="cat">مارشل</p>
-                            </div>
+                            <Link to={'/news/interesting'}>
+                                <div className="service-icon">
+                                    <i style={Styles.parraImg}
+                                       className="pixeden glyphicon"></i>
+                                    <p id="cat">مارشل</p>
+                                </div>
+                            </Link>
                         </li>
                         <li>
-                            <div className="service-icon">
-                                <i style={Styles.roundImg}
-                                   className="pixeden glyphicon"></i>
-                                <p id="cat"> پیپلز </p>
-                            </div>
+                            <Link to={'/news/interesting'}>
+                                <div className="service-icon">
+                                    <i style={Styles.roundImg}
+                                       className="pixeden glyphicon"></i>
+                                    <p id="cat"> پیپلز </p>
+                                </div>
+                            </Link>
                         </li>
                         <li>
-                            <div className="service-icon">
-                                <i style={Styles.parraImg}
-                                   className="pixeden glyphicon"></i>
-                                <p id="cat"> ملک</p>
-                            </div>
+                            <Link to={'/news/interesting'}>
+                                <div className="service-icon">
+                                    <i style={Styles.parraImg}
+                                       className="pixeden glyphicon"></i>
+                                    <p id="cat"> ملک</p>
+                                </div>
+                            </Link>
                         </li>
 
                     </ul>

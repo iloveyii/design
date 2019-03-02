@@ -7,7 +7,6 @@ export function* newsReadSaga(action) {
         const resp = yield call(api.feed.interesting, action.payload.newsId);
 
         if(Array.isArray(resp)) {
-            console.log('resp', resp);
             yield put(newsReadSuccessAction(resp));
         } else {
             yield put(newsReadFailAction(resp));

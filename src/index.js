@@ -97,7 +97,6 @@ localStorage.setItem('statsUpdate', statsUpdate);
 
 // Read news
 if(true || ENVIRONMENT.DEV) {
-    console.log('Dispatching newsReadAction');
     store.dispatch(newsReadAction());
 }
 
@@ -105,8 +104,11 @@ if(true || ENVIRONMENT.DEV) {
  * Avoid setting up multiple interval objects in background
  * @type {string | null}
  */
-
-store.subscribe(() =>  { console.log('subscribed store in index', store.getState()); });
+if(ENVIRONMENT.DEV) {
+    store.subscribe(() => {
+        console.log('subscribed store in index', store.getState());
+    });
+}
 
 /**
  * Render the main App Component
