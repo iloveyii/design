@@ -6,9 +6,6 @@ class Services extends React.Component {
         return (
             <section id="services">
                 <div className="wrapper">
-                    <h1>Services</h1>
-                    <p></p>
-
                     <ul className="focus-box">
                         <li>
                             <Link to={'/news'}>
