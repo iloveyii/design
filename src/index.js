@@ -36,10 +36,13 @@ import registerServiceWorker from './registerServiceWorker';
 import rootSaga from './sagas/rootSaga';
 import NewsReducer from "./reducers/NewsReducer";
 import InterestingReducer from "./reducers/InterestingReducer";
+import InternationalReducer from "./reducers/InternationalReducer";
+import {internationalReadAction} from "./actions/InternationalAction";
 
 const allReducers = combineReducers({
     news: NewsReducer,
     interesting: InterestingReducer,
+    international: InternationalReducer,
 });
 
 // # 02
@@ -102,6 +105,7 @@ localStorage.setItem('statsUpdate', statsUpdate);
 if(true || ENVIRONMENT.DEV) {
     store.dispatch(interestingReadAction());
     store.dispatch(newsReadAction());
+    store.dispatch(internationalReadAction());
 }
 
 /**

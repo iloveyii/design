@@ -209,7 +209,7 @@ ul:after {
   margin-right: 2%;
   margin-bottom: 2%;
   width: 32%;
-  border: 1px solid rebeccapurple;
+  /* border: 1px solid rebeccapurple; */
 }
 
 #services li:nth-child(3n) {
@@ -382,7 +382,7 @@ section h1 {
 }
 p#cat {
   position: absolute;
-  top: 10px;
+  top: 5px;
   text-align: center;
   left: 44px;
   display: block;

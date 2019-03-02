@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Card from './Card';
 import { newsReadAction } from '../actions/NewsAction';
 import { interestingReadAction } from '../actions/InterestingAction';
+import { internationalReadAction } from '../actions/InternationalAction';
 import {withRouter} from "react-router-dom";
 
 class Cards extends React.Component {
@@ -14,7 +15,7 @@ class Cards extends React.Component {
     }
 
     getData(nextProps) {
-        const { news, interesting } = nextProps;
+        const { news, interesting, international } = nextProps;
         const { pathname } = nextProps.location;
         switch(pathname) {
             case '/news':
@@ -25,6 +26,11 @@ class Cards extends React.Component {
             case '/interesting':
                 if(interesting && Array.isArray(interesting)) {
                     this.setState({items: interesting.slice(0, 15)});
+                }
+                break;
+            case '/international':
+                if(international && Array.isArray(international)) {
+                    this.setState({items: international.slice(0, 15)});
                 }
                 break;
         }
@@ -57,6 +63,7 @@ class Cards extends React.Component {
 const mapStateToProps = state => ({
     news: state.news,
     interesting: state.interesting,
+    international: state.international,
 });
 
 /**
@@ -65,7 +72,8 @@ const mapStateToProps = state => ({
  */
 const mapActionsToProps = {
     newsReadAction,
-    interestingReadAction
+    interestingReadAction,
+    internationalReadAction
 };
 
 export default withRouter(connect(mapStateToProps, mapActionsToProps)(Cards));

@@ -11,61 +11,11 @@ class Services extends React.Component {
 
                     <ul className="focus-box">
                         <li>
-                            <div className="service-icon">
-                                <i style={Styles.parraImg}
-                                   className="pixeden glyphicon"></i>
-                                <p id="cat">مارشل</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="service-icon">
-                                <i style={Styles.roundImg}
-                                   className="pixeden glyphicon"></i>
-                                <p id="cat"> پیپلز </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="service-icon">
-                                <i style={Styles.parraImg}
-                                   className="pixeden glyphicon"></i>
-                                <p id="cat"> ملک</p>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                    <ul className="focus-box">
-                        <li>
-                            <div className="service-icon">
-                                <i style={Styles.parraImg}
-                                   className="pixeden glyphicon"></i>
-                                <p id="cat">مارشل</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="service-icon">
-                                <i style={Styles.roundImg}
-                                   className="pixeden glyphicon"></i>
-                                <p id="cat"> پیپلز </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="service-icon">
-                                <i style={Styles.parraImg}
-                                   className="pixeden glyphicon"></i>
-                                <p id="cat"> ملک</p>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                    <ul className="focus-box">
-                        <li>
                             <Link to={'/news'}>
                                 <div className="service-icon">
                                     <i style={Styles.parraImg}
                                        className="pixeden glyphicon"></i>
-                                    <p id="cat">مارشل</p>
+                                    <p id="cat">خبریں</p>
                                 </div>
                             </Link>
                         </li>
@@ -74,18 +24,70 @@ class Services extends React.Component {
                                 <div className="service-icon">
                                     <i style={Styles.roundImg}
                                        className="pixeden glyphicon"></i>
-                                    <p id="cat"> پیپلز </p>
+                                    <p id="cat"> دلچسپ </p>
                                 </div>
                             </Link>
                         </li>
                         <li>
-                            <Link to={'/news/interesting'}>
+                            <Link to={'/mazahia'}>
                                 <div className="service-icon">
                                     <i style={Styles.parraImg}
                                        className="pixeden glyphicon"></i>
-                                    <p id="cat"> ملک</p>
+                                    <p id="cat">مزاخیہ</p>
                                 </div>
                             </Link>
+                        </li>
+
+                    </ul>
+
+                    <ul className="focus-box">
+                        <li>
+                            <Link to={'/international'}>
+                                <div className="service-icon">
+                                    <i style={Styles.parraImg}
+                                       className="pixeden glyphicon"></i>
+                                    <p id="cat">بین الاقوامی</p>
+                                </div>
+                            </Link>
+                        </li>
+                        <li>
+                            <div className="service-icon">
+                                <i style={Styles.roundImg}
+                                   className="pixeden glyphicon"></i>
+                                <p id="cat"> پیپلز </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="service-icon">
+                                <i style={Styles.parraImg}
+                                   className="pixeden glyphicon"></i>
+                                <p id="cat"> ملک</p>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <ul className="focus-box">
+                        <li>
+                            <div className="service-icon">
+                                <i style={Styles.parraImg}
+                                   className="pixeden glyphicon"></i>
+                                <p id="cat">مارشل</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="service-icon">
+                                <i style={Styles.roundImg}
+                                   className="pixeden glyphicon"></i>
+                                <p id="cat"> پیپلز </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="service-icon">
+                                <i style={Styles.parraImg}
+                                   className="pixeden glyphicon"></i>
+                                <p id="cat"> ملک</p>
+                            </div>
                         </li>
 
                     </ul>
