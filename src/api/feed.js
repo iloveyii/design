@@ -1,29 +1,29 @@
 import axios from 'axios';
-
+const server = 'http://be_newsapp.softhem.se';
 export default {
     feed: {
         interesting: () =>
-            axios.get('http://localhost:8080/urdu/interesting').then(res => res.data).catch(error => {
+            axios.get(server + '/urdu/interesting').then(res => res.data).catch(error => {
                 throw new Error(error);
                 console.dir(error);
             }),
         news: () =>
-            axios.get('http://localhost:8080/urdu/news').then(res => res.data).catch(error => {
+            axios.get(server + '/urdu/news').then(res => res.data).catch(error => {
                 throw new Error(error);
                 console.dir(error);
             }),
         international: () =>
-            axios.get('http://localhost:8080/urdu/international').then(res => res.data).catch(error => {
+            axios.get(server + '/urdu/international').then(res => res.data).catch(error => {
                 throw new Error(error);
                 console.dir(error);
             }),
         science: () =>
-            axios.get('http://localhost:8080/urdu/science').then(res => res.data).catch(error => {
+            axios.get(server + '/urdu/science').then(res => res.data).catch(error => {
                 throw new Error(error);
                 console.dir(error);
             }),
         mazahia: () =>
-            axios.get('http://localhost:8080/urdu/mazahia').then(res => res.data).catch(error => {
+            axios.get(server + '/urdu/mazahia').then(res => res.data).catch(error => {
                 throw new Error(error);
                 console.dir(error);
             }),
