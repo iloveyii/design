@@ -15,7 +15,7 @@ class Cards extends React.Component {
 
     getData(nextProps) {
         const { news, interesting } = nextProps;
-        const { pathname } = this.props.location;
+        const { pathname } = nextProps.location;
         switch(pathname) {
             case '/news':
                 if(news && Array.isArray(news)) {
@@ -31,6 +31,7 @@ class Cards extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        console.log('Inside componentWillReceiveProps');
         this.getData(nextProps);
     }
 
