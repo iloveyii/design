@@ -61,7 +61,7 @@ class Services extends React.Component {
 
                     <ul className="focus-box">
                         <li>
-                            <Link to={'/news/interesting'}>
+                            <Link to={'/news'}>
                                 <div className="service-icon">
                                     <i style={Styles.parraImg}
                                        className="pixeden glyphicon"></i>
@@ -70,7 +70,7 @@ class Services extends React.Component {
                             </Link>
                         </li>
                         <li>
-                            <Link to={'/news/interesting'}>
+                            <Link to={'/interesting'}>
                                 <div className="service-icon">
                                     <i style={Styles.roundImg}
                                        className="pixeden glyphicon"></i>

@@ -10,7 +10,7 @@ class Header extends React.Component {
                         <ul>
                             <li>
                                 <Link to={'/'}>
-                                    <a href="#">Home</a>
+                                    <span>Home</span>
                                 </Link>
                             </li>
                             <li><a href="#">About</a></li>

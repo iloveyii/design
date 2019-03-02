@@ -3,21 +3,39 @@ import { connect } from "react-redux";
 
 import Card from './Card';
 import { newsReadAction } from '../actions/NewsAction';
+import { interestingReadAction } from '../actions/InterestingAction';
+import {withRouter} from "react-router-dom";
 
 class Cards extends React.Component {
     constructor(props) {
         super(props);
         this.state = { items: [] };
+        this.getData = this.getData.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
-        if(nextProps.news && Array.isArray(nextProps.news)) {
-            this.setState({items: nextProps.news.slice(0, 15)});
+    getData(nextProps) {
+        const { news, interesting } = nextProps;
+        const { pathname } = this.props.location;
+        switch(pathname) {
+            case '/news':
+                if(news && Array.isArray(news)) {
+                    this.setState({items: news.slice(0, 15)});
+                }
+                break;
+            case '/interesting':
+                if(interesting && Array.isArray(interesting)) {
+                    this.setState({items: interesting.slice(0, 15)});
+                }
+                break;
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.getData(nextProps);
+    }
+
     componentDidMount() {
-        this.props.newsReadAction(11);
+        this.getData(this.props);
     }
 
     render() {
@@ -37,6 +55,7 @@ class Cards extends React.Component {
  */
 const mapStateToProps = state => ({
     news: state.news,
+    interesting: state.interesting,
 });
 
 /**
@@ -45,7 +64,8 @@ const mapStateToProps = state => ({
  */
 const mapActionsToProps = {
     newsReadAction,
+    interestingReadAction
 };
 
-export default connect(mapStateToProps, mapActionsToProps)(Cards);
+export default withRouter(connect(mapStateToProps, mapActionsToProps)(Cards));
 

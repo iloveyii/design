@@ -16,6 +16,7 @@ import * as serviceWorker from './serviceWorker';
 import { ENVIRONMENT } from "./common/behaviour";
 import App from './App';
 import { newsReadAction } from "./actions/NewsAction";
+import { interestingReadAction } from "./actions/InterestingAction";
 
 /**
  * Resources
@@ -34,9 +35,11 @@ import registerServiceWorker from './registerServiceWorker';
  */
 import rootSaga from './sagas/rootSaga';
 import NewsReducer from "./reducers/NewsReducer";
+import InterestingReducer from "./reducers/InterestingReducer";
 
 const allReducers = combineReducers({
-    news: NewsReducer
+    news: NewsReducer,
+    interesting: InterestingReducer,
 });
 
 // # 02
@@ -97,6 +100,7 @@ localStorage.setItem('statsUpdate', statsUpdate);
 
 // Read news
 if(true || ENVIRONMENT.DEV) {
+    store.dispatch(interestingReadAction());
     store.dispatch(newsReadAction());
 }
 
