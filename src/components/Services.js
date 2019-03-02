@@ -51,11 +51,13 @@ class Services extends React.Component {
                             </Link>
                         </li>
                         <li>
-                            <div className="service-icon">
-                                <i style={Styles.roundImg}
-                                   className="pixeden glyphicon"></i>
-                                <p id="cat"> پیپلز </p>
-                            </div>
+                            <Link to={'/science'}>
+                                <div className="service-icon">
+                                    <i style={Styles.roundImg}
+                                       className="pixeden glyphicon"></i>
+                                    <p id="cat"> سائنس </p>
+                                </div>
+                            </Link>
                         </li>
                         <li>
                             <div className="service-icon">

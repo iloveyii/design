@@ -15,7 +15,7 @@ class Cards extends React.Component {
     }
 
     getData(nextProps) {
-        const { news, interesting, international } = nextProps;
+        const { news, interesting, international, science } = nextProps;
         const { pathname } = nextProps.location;
         switch(pathname) {
             case '/news':
@@ -31,6 +31,11 @@ class Cards extends React.Component {
             case '/international':
                 if(international && Array.isArray(international)) {
                     this.setState({items: international.slice(0, 15)});
+                }
+                break;
+            case '/science':
+                if(science && Array.isArray(science)) {
+                    this.setState({items: science.slice(0, 15)});
                 }
                 break;
         }
@@ -64,6 +69,7 @@ const mapStateToProps = state => ({
     news: state.news,
     interesting: state.interesting,
     international: state.international,
+    science: state.science,
 });
 
 /**

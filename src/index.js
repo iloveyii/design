@@ -38,11 +38,14 @@ import NewsReducer from "./reducers/NewsReducer";
 import InterestingReducer from "./reducers/InterestingReducer";
 import InternationalReducer from "./reducers/InternationalReducer";
 import {internationalReadAction} from "./actions/InternationalAction";
+import {scienceReadAction} from "./actions/ScienceAction";
+import ScienceReducer from "./reducers/ScienceReducer";
 
 const allReducers = combineReducers({
     news: NewsReducer,
     interesting: InterestingReducer,
     international: InternationalReducer,
+    science: ScienceReducer
 });
 
 // # 02
@@ -106,6 +109,7 @@ if(true || ENVIRONMENT.DEV) {
     store.dispatch(interestingReadAction());
     store.dispatch(newsReadAction());
     store.dispatch(internationalReadAction());
+    store.dispatch(scienceReadAction());
 }
 
 /**
