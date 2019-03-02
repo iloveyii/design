@@ -40,12 +40,15 @@ import InternationalReducer from "./reducers/InternationalReducer";
 import {internationalReadAction} from "./actions/InternationalAction";
 import {scienceReadAction} from "./actions/ScienceAction";
 import ScienceReducer from "./reducers/ScienceReducer";
+import MazahiaReducer from "./reducers/MazahiaReducer";
+import {mazahiaReadAction} from "./actions/MazahiaAction";
 
 const allReducers = combineReducers({
     news: NewsReducer,
     interesting: InterestingReducer,
     international: InternationalReducer,
-    science: ScienceReducer
+    science: ScienceReducer,
+    mazahia: MazahiaReducer
 });
 
 // # 02
@@ -110,6 +113,7 @@ if(true || ENVIRONMENT.DEV) {
     store.dispatch(newsReadAction());
     store.dispatch(internationalReadAction());
     store.dispatch(scienceReadAction());
+    store.dispatch(mazahiaReadAction());
 }
 
 /**

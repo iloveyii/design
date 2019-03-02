@@ -22,6 +22,7 @@ class App extends Component {
                     <Route exact path={`/interesting`} component={Cards} />
                     <Route exact path={`/international`} component={Cards} />
                     <Route exact path={`/science`} component={Cards} />
+                    <Route exact path={`/mazahia`} component={Cards} />
                     <Route exact path={`/`} component={Services} />
                     <Route component={Ni} />
                 </Switch>
