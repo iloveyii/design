@@ -1,10 +1,8 @@
 import React from 'react';
-import Card from './Card';
-import News18 from './interesting/News18';
-import api from './../api/interesting';
+import { connect } from "react-redux";
 
-import Parser from 'rss-parser';
-import axios from 'axios';
+import Card from './Card';
+import { newsReadAction } from '../actions/NewsAction';
 
 class Cards extends React.Component {
     constructor(props) {
@@ -13,17 +11,22 @@ class Cards extends React.Component {
         this.url = 'http://localhost:8080/urdup/interesting';
     }
 
-
-
+    componentWillReceiveProps(nextProps) {
+        console.log('Inside componentWillReceiveProps');
+        this.setState({ items: nextProps.news.slice(0, 15) });
+    }
     componentDidMount() {
-        (async () => {
-            await fetch(this.url)
-                .then(response => response.text())
-                .then(contents => {
-                    this.setState({ items: (JSON.parse(contents.replace(/&quot;/g,'\\"'))).slice(0, 20) });
-                })
-                .catch(() => console.log("Can’t access " + this.url + " response. Blocked by browser?"));
-        })();
+        console.log('Inside componentDidMount');
+        this.props.newsReadAction(11);
+            /*
+            (async () => {
+                await fetch(this.url)
+                    .then(response => response.text())
+                    .then(contents => {
+                        this.setState({ items: (JSON.parse(contents.replace(/&quot;/g,'\\"'))).slice(0, 20) });
+                    })
+                    .catch(() => console.log("Can’t access " + this.url + " response. Blocked by browser?"));
+            })();*/
     }
 
     render() {
@@ -38,4 +41,21 @@ class Cards extends React.Component {
     }
 }
 
-export default Cards;
+/**
+ * Get data from store
+ * @param state
+ */
+const mapStateToProps = state => ({
+    news: state.news,
+});
+
+/**
+ * Import action from dir action above - but must be passed to connect method in order to trigger reducer in store
+ * @type {{UserUpdate: UserUpdateAction}}
+ */
+const mapActionsToProps = {
+    newsReadAction,
+};
+
+export default connect(mapStateToProps, mapActionsToProps)(Cards);
+

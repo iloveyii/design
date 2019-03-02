@@ -13,15 +13,15 @@ import * as serviceWorker from './serviceWorker';
 /**
  * Our custom components / packages
  */
-import { ENVIRONMENT } from "./Common/behaviour";
+import { ENVIRONMENT } from "./common/behaviour";
 import App from './App';
-import { eventsReadAction } from "./Actions/EventsActions";
+import { newsReadAction } from "./actions/NewsAction";
 
 /**
  * Resources
  */
 import './index.css';
-// import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker';
 
 // # 01
 /**
@@ -32,19 +32,11 @@ import './index.css';
  * @param action
  * @returns {Array} - every return value is assigned to the corresponding key in allReducers
  */
-import UserReducer from './Reducers/UserReducer';
-import CategoryReducer from './Reducers/CategoryReducer';
-import TriggerReducer from './Reducers/TriggerReducer';
-import EventStatsReducer from './Reducers/EventStatsReducer';
-import OddsReducer from './Reducers/OddsReducer';
-import OrderReducer from './Reducers/OrderReducer';
-import EventsReducer from './Reducers/EventsReducer';
-import EventReducer from './Reducers/EventReducer';
-import SessionReducer from './Reducers/SessionReducer';
-import OrdersReducer from './Reducers/OrdersReducer';
+import rootSaga from './sagas/rootSaga';
+import NewsReducer from "./reducers/NewsReducer";
 
-import rootSaga from './Sagas/rootSaga';
 const allReducers = combineReducers({
+    news: NewsReducer
 });
 
 // # 02
@@ -59,7 +51,7 @@ const sagaMiddleware = createSagaMiddleware();
  */
 // Fixing error : TypeError: t is undefined
 // Only chrome can handle the redux dev tool
-// redux compose cannot handle a null or undefined middleware
+// Redux compose cannot handle a null or undefined middleware
 const allStoreEnhancers = window.navigator.userAgent.includes('Chrome') && window.devToolsExtension && ENVIRONMENT.DEV
     ? compose(
         applyMiddleware(sagaMiddleware),
@@ -85,7 +77,7 @@ sagaMiddleware.run(rootSaga);
 /**
  * You can see the status of store - but only data and not reducers
  */
-// console.log(store.getState());
+console.log(store.getState());
 
 // # 06
 /**
@@ -103,9 +95,10 @@ statsUpdate = setInterval(() => store.dispatch(eventStatsUpdateAction()), 6000);
 localStorage.setItem('statsUpdate', statsUpdate);
 */
 
-// Read events
+// Read news
 if(true || ENVIRONMENT.DEV) {
-    // store.dispatch(eventsReadAction());
+    console.log('Dispatching newsReadAction');
+    store.dispatch(newsReadAction());
 }
 
 /**
@@ -113,13 +106,19 @@ if(true || ENVIRONMENT.DEV) {
  * @type {string | null}
  */
 
-// store.subscribe(() =>  { console.log('subscribed store in index', store.getState()); TotalGoalsModel.showState(store.getState()); });
+store.subscribe(() =>  { console.log('subscribed store in index', store.getState()); });
 
 /**
  * Render the main App Component
  */
-
-ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render((
+    <BrowserRouter>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </BrowserRouter>
+), document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
