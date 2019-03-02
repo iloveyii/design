@@ -55,8 +55,8 @@ ul:after {
 /* FOCUS BOX */
 .focus-box .service-icon {
   margin-bottom: 30px;
-  width: 120px;
-  height: 120px;
+  width: 115px;
+  height: 115px;
   margin: auto;
   border-radius: 50%;
   border: 10px solid #ececec;
