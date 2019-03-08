@@ -18,15 +18,15 @@ class Card extends React.Component {
             <section id="cards">
                 <div className="wrapper">
                     <div className="card">
-                        <div>
+                        <div className="img">
                             <img src={item.image} alt="Image" />
                         </div>
                         <div className="content">
                             <div className="title"><h2> {item.title} </h2></div>
                         </div>
                     </div>
-                    <div className="card">
-                        <button onClick={this.expand}>Show more</button>
+                    <div className="footer">
+                        <button className="btn fifth" onClick={this.expand}>Show more</button>
                         {
                             this.state.expanded
                                 ? <div className="description"><p className="urdu">{item.contentSnippet.trim()}</p></div>
