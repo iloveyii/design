@@ -32,6 +32,7 @@ class Card extends React.Component {
                                 ? <div className="description"><p className="urdu">{item.contentSnippet.trim()}</p></div>
                                 : null
                         }
+                        <hr />
                     </div>
                 </div>
             </section>
