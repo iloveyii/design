@@ -184,7 +184,7 @@ ul:after {
 
 #main-nav li {
     float: left;
-    width: 25%;
+    width: 16.60%;
 }
 
 #main-nav a {
@@ -344,21 +344,21 @@ section h1 {
     cursor: pointer;
     display: flex;
     align-self: center;
-    font-size: 1rem;
+    font-size: 2.5rem;
     font-weight: 400;
     line-height: 1;
-    padding: 1.2em 2.8em;
+    padding: 0.6em 1.3em;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Amiri', serif;
     font-weight: 700;
     margin-bottom: 10px;
 }
 
 .btn:hover,
 .btn:focus {
-    color: #000;
+    color: green;
     outline: 0;
 }
 
@@ -381,13 +381,13 @@ section h1 {
     transform: translateX(-50%);
     width: 0;
     height: 100%;
-    background: $ purple;
+    background: #f9f9f9;
     z-index: -1;
     transition: width 150ms ease-in-out;
 }
 
 .fifth:hover {
-    color: #fff;
+    color: green;
 }
 
 .fifth:after {

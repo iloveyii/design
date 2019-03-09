@@ -26,7 +26,7 @@ class Card extends React.Component {
                         </div>
                     </div>
                     <div className="footer">
-                        <button className="btn fifth" onClick={this.expand}>Show more</button>
+                        <button className="btn fifth" onClick={this.expand}>مزید</button>
                         {
                             this.state.expanded
                                 ? <div className="description">
