@@ -315,6 +315,9 @@ section h1 {
     width: 15%;
     float: left;
 }
+.card div.img img {
+    width: 100%;
+}
 
 .card div.content {
     margin-left: 15%;
