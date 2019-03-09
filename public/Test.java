@@ -14,19 +14,16 @@ public class Test {
         }
     }
 
-
     static class B extends A {
         public String toString() {
             return "TUFF ";
         }
     }
 
-
     public static void main(String[] args) {
         A obj = new B();
         System.out.print(obj);
         System.out.print((B) obj);
-        System.out.print((A)(obj));
+        System.out.print((A) (obj));
     }
 }
-
