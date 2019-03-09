@@ -1,6 +1,6 @@
 import axios from 'axios';
-// const server = 'http://be_newsapp.softhem.se';
-const server = 'http://localhost:8080';
+const server = 'http://be_newsapp.softhem.se';
+// const server = 'http://localhost:8080';
 export default {
     feed: {
         interesting: () =>
