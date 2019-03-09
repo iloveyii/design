@@ -68,7 +68,6 @@ class Cards extends React.Component {
                         :
                         <div>Loading ...</div>
                 }
-                <Banner/>
             </div>
         )
     }

@@ -15,20 +15,15 @@ class UrduController extends Controller
     {
         Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
         $methods = get_class_methods($this);
-        $actions = [];
 
-        foreach ($methods as $method) {
-            if(strpos($method, 'action') !== false) {
-                $a = strtolower( str_replace('action', '', $method) );
-                if(strlen($a) > 2) {
-                    $actions[] = $a;
-                }
-            }
-        }
+        $actions = array_filter($methods, function ($method) { return ( strpos($method, 'action') !== false) && (strlen($method) > 8 ); });
+        $actions = array_map(function ($a) {
+            return strtolower( str_replace('action', '', $a) );
+        }, $actions);
 
         return $this->render('index', [
-            'actions' => $actions]
-        );
+            'actions' => $actions
+        ]);
     }
 
     public function actionNews()
