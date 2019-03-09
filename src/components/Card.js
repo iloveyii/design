@@ -15,7 +15,7 @@ class Card extends React.Component {
     render() {
         const { item } = this.props;
         return (
-            <section id="cards">
+            <section>
                 <div className="wrapper">
                     <div className="card">
                         <div className="img">

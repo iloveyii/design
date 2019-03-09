@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use Yii;
 
 class UrduController extends Controller
 {
@@ -9,6 +10,26 @@ class UrduController extends Controller
     protected $urlInteresting = 'http://urdu.news18.com/rss/eye-catcher.xml';
     protected $urlInternational = 'https://www.urdupoint.com/rss/urdupoint-int.rss';
     protected $urlScience = 'https://www.bbc.com/urdu/science/index.xml#sa-link_location=story-body&intlink_from_url=https%3A%2F%2Fwww.bbc.com%2Furdu%2Finstitutional%2F2009%2F03%2F090306_rss_feed&intlink_ts=1551557584381-sa';
+
+    public function actionIndex()
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+        $methods = get_class_methods($this);
+        $actions = [];
+
+        foreach ($methods as $method) {
+            if(strpos($method, 'action') !== false) {
+                $a = strtolower( str_replace('action', '', $method) );
+                if(strlen($a) > 2) {
+                    $actions[] = $a;
+                }
+            }
+        }
+
+        return $this->render('index', [
+            'actions' => $actions]
+        );
+    }
 
     public function actionNews()
     {

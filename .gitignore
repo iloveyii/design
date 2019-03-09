@@ -27,3 +27,4 @@ yarn-error.log*
 
 # java class files
 *.class
+/be/vendor

@@ -22,7 +22,7 @@ class Cards extends React.Component {
         switch(pathname) {
             case '/news':
                 if(news && Array.isArray(news)) {
-                    this.setState({items: news.slice(0, 15)});
+                    this.setState({items: news.slice()});
                 }
                 break;
             case '/interesting':
@@ -32,7 +32,7 @@ class Cards extends React.Component {
                 break;
             case '/international':
                 if(international && Array.isArray(international)) {
-                    this.setState({items: international.slice(0, 15)});
+                    this.setState({items: international.slice()});
                 }
                 break;
             case '/science':
@@ -59,7 +59,7 @@ class Cards extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id="cards">
 
                 {
                     this.state.items && this.state.items.length > 0
